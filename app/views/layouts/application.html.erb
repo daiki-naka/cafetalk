@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cafetalk</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Unica+One::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="common__header">
+      <ul class="common__header__nav">
+        <li class="common__header__nav--title">
+          <a href="/" class= 'header__link' >
+            CafeTalk
+          </a>
+        </li>
+        <% if user_signed_in? %>
+          <li class="common__header__nav--list header_user">
+            <i class="fa fa-user"></i>
+            <span class= 'header_ user__nickname'><%= current_user.nickname %></span>
+            <a href="/users/<%= current_user.id %>"  class= 'header__link user-text'>マイページ</a>
+            <%= link_to "ログアウト", destroy_user_session_path, class: 'header__link user-text',  method: :delete %>
+          </li>
+          <li class="common__header__nav--list--header-review">
+            <i class="fa fa-edit"></i>
+            <a class="post header__link" href="/tweets/new">投稿</a>
+          </li>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: 'post header__link header__log' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post header__link header__log-text' %>
+          </div>
+        <% end %>
+        </li>
+      </ul>
+    </header>
+    <%= yield %>
+    <footer>
+      <a class="btn-social-square btn-social-square--twitter">
+        <i id="icon1" class="fa fa-twitter"></i>
+      </a>
+      <a class="btn-social-square btn-social-square--twitter">
+        <i id="icon2" class="fa fa-instagram"></i>
+      </a>
+      <a class="btn-social-square btn-social-square--twitter">
+        <i id="icon3" class="fa fa-facebook-square"></i>
+      </a>
+    </footer>
+  </body>
+</html>

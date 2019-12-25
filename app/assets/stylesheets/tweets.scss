@@ -1,0 +1,20 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@font-face {
+  font-family: 'からかぜ';
+  src: font-url('karakaze-M.ttf') format('truetype');
+}
+
+.contents__top{
+  margin-top: 50px;
+  &--title{
+    margin-left: 350px;
+    font-size: 7vh;
+    font-family: 'からかぜ';
+  }
+}
+
+

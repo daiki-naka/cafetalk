@@ -1,0 +1,11 @@
+<div class= 'contents__top'></div>
+  <h1 class= 'contents__top--title'>ほっとひといき、はなしましょ。</h1>
+<div class="contents row" >
+  <% @tweets.each do |tweet| %>
+    <%= render partial: "tweet", locals: { tweet: tweet } %>
+  <% end %>
+  <%= paginate(@tweets) %>
+</div>
+<div id="js-loader" class="loader">
+    <div class="loader-animation"></div>
+</div>

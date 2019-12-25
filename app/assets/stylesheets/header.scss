@@ -1,0 +1,49 @@
+.common__header{
+  height: 70px;
+  width: 100%;
+  border-top: 4px solid #333333;
+  box-shadow: rgba(113, 135, 164, 0.12) 0px 0px 5px 2px;
+  &__nav{
+    margin-left: 100px;
+    padding:20px;
+    display: flex;
+    &--title{
+      font-family: 'Overpass', sans-serif;
+      font-size: 22px;
+    }
+    &--list{
+      margin-top: 5px;
+      margin-left: 30px;
+      font-family: 'Hind Siliguri', sans-serif;
+      &--text{
+        font-size:14px;
+        margin-left: 4px;
+      }
+      &--header-review{
+        margin-left: 350px;
+      }
+    }
+  }
+}
+
+.header_user{
+  margin-left: 100px;
+}
+
+.user-text{
+  font-size: 14px;
+}
+
+.header__log{
+  font-size: 14px;
+  margin-left: 100px;
+  margin-top:10px;
+}
+
+.header__log-text{
+  font-size: 14px;
+}
+// アイコン
+.info {
+  font-size:12px;
+}
